@@ -50,7 +50,7 @@ public class MainActivity extends ActionBarActivity {
         String name = editName.getText().toString();
         String country = editCountry.getText().toString();
         String city = editCity.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, "Dear" + name + ", so, you are from " + country + ". Also from " + city + ". Very nice!");
+        intent.putExtra(EXTRA_MESSAGE, "Dear " + name + ", so you are from " + country + ". Also from " + city + ". Very nice!");
         startActivity(intent);
     }
 }
