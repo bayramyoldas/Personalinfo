@@ -1,6 +1,7 @@
 package com.bayram.yoldas.personalinfo;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -18,6 +19,7 @@ public class DisplayMessageActivity extends ActionBarActivity {
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
         TextView textView = new TextView(this);
         textView.setTextSize(22);
+        textView.setTextColor(Color.parseColor("#951313"));
         textView.setText(message);
         setContentView(textView);
     }
