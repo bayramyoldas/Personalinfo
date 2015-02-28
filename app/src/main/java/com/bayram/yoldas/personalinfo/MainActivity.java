@@ -1,13 +1,18 @@
 package com.bayram.yoldas.personalinfo;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+
 
 
 public class MainActivity extends ActionBarActivity {
 
+    public final static String EXTRA_MESSAGE = "com.yoldas.bayram.learning.MESSAGE";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,5 +40,17 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void sendMessage (View view) {
+        Intent intent = new Intent(this, DisplayMessageActivity.class);
+        EditText editName    = (EditText) findViewById(R.id.name_txt); // R is a system call
+        EditText editCountry = (EditText) findViewById(R.id.country_txt); // R is a system call
+        EditText editCity    = (EditText) findViewById(R.id.city_txt); // R is a system call
+        String name = editName.getText().toString();
+        String country = editCountry.getText().toString();
+        String city = editCity.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, "Dear" + name + ", so, you are from " + country + ". Also from " + city + ". Very nice!");
+        startActivity(intent);
     }
 }
